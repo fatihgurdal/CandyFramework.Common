@@ -73,7 +73,7 @@ namespace CandyFramework.Common.Converter
         #region - Serialize -
         public static string JSONSerialize<T>(T serializeObject) where T : class
         {
-            return JSONSerialize(serializeObject, false);
+            return JSONSerialize(serializeObject, string.Empty);
         }
         public static string JSONSerialize<T>(T serializeObject, string encrytPass) where T : class
         {
@@ -96,7 +96,7 @@ namespace CandyFramework.Common.Converter
         #region - Desrializer -
         public static T JSONDeserialize<T>(string deserializeString)
         {
-            return JSONDeserialize<T>(deserializeString, false);
+            return JSONDeserialize<T>(deserializeString, string.Empty);
         }
         public static T JSONDeserialize<T>(string deserializeString, string encrytPass)
         {

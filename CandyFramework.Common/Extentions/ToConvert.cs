@@ -108,12 +108,12 @@ namespace CandyFramework.Common.Extentions
                             if (Nullable.GetUnderlyingType(objProperty.PropertyType) != null)
                             {
                                 value = row[columnname].ToString().Replace("$", "").Replace(",", "");
-                                objProperty.SetValue(obj, Convert.ChangeType(value, Type.GetType(Nullable.GetUnderlyingType(objProperty.PropertyType).ToString())), null);
+                                objProperty.SetValue(obj, System.Convert.ChangeType(value, Type.GetType(Nullable.GetUnderlyingType(objProperty.PropertyType).ToString())), null);
                             }
                             else
                             {
                                 value = row[columnname].ToString().Replace("%", "");
-                                objProperty.SetValue(obj, Convert.ChangeType(value, Type.GetType(objProperty.PropertyType.ToString())), null);
+                                objProperty.SetValue(obj, System.Convert.ChangeType(value, Type.GetType(objProperty.PropertyType.ToString())), null);
                             }
                         }
                     }
