@@ -16,7 +16,7 @@ namespace CandyFramework.Common.Encryption
 
         #region - Encrypt -
         /// <summary>
-        /// 
+        /// Candy Frameworj Metin Şifreleme
         /// </summary>
         /// <param name="plainText">Şifrelenecek metin</param>
         /// <param name="passPhrase">Şifrelenecek metinde kullanılaca private key</param>
@@ -26,7 +26,7 @@ namespace CandyFramework.Common.Encryption
             return Encrypt(plainText, passPhrase, CipherMode.CBC);
         }
         /// <summary>
-        /// 
+        /// Candy Frameworj Metin Şifreleme
         /// </summary>
         /// <param name="plainText">Şifrelenecek metin</param>
         /// <param name="passPhrase">Şifrelenecek metinde kullanılaca private key</param>
@@ -37,7 +37,7 @@ namespace CandyFramework.Common.Encryption
             return Encrypt(plainText, passPhrase, cipherMode, PaddingMode.PKCS7);
         }
         /// <summary>
-        /// Metin şifreleme -
+        /// Candy Frameworj Metin Şifreleme
         /// </summary>
         /// <param name="plainText">Şifrelenecek Metin</param>
         /// <param name="passPhrase">Şifrelenen metnin şifresi nedir?</param>
@@ -84,21 +84,34 @@ namespace CandyFramework.Common.Encryption
         #endregion
 
         #region - Decrypt -
+        /// <summary>
+        /// Candy Frameworj Metin Şifre Çözücü
+        /// </summary>
+        /// <param name="plainText">Şifrelenmiş Metin</param>
+        /// <param name="passPhrase">Şifrelenmiş metnin şifresi nedir?</param>
+        /// <returns></returns>
         public static string Decrypt(string plainText, string passPhrase)
         {
             return Decrypt(plainText, passPhrase, CipherMode.CBC);
         }
+        /// <summary>
+        /// Candy Frameworj Metin Şifre Çözücü
+        /// </summary>
+        /// <param name="plainText"></param>
+        /// <param name="passPhrase">Şifrelenmiş metnin şifresi nedir?</param>
+        /// <param name="cipherMode">Şifreleme için kullanılacak blok şifreleme modunu belirtir.</param>
+        /// <returns></returns>
         public static string Decrypt(string plainText, string passPhrase, CipherMode cipherMode)
         {
             return Decrypt(plainText, passPhrase, cipherMode, PaddingMode.PKCS7);
         }
         /// <summary>
-        /// Metin şifre çözücü -
+        /// Candy Frameworj Metin Şifre Çözücü
         /// </summary>
         /// <param name="cipherText">Şifreli Metin</param>
-        /// <param name="passPhrase">Şifresi Nedir?</param>
-        /// <param name="cipherMode">şifre modu</param>
-        /// <param name="paddingMode">Dolgulama türü</param>
+        /// <param name="passPhrase">Şifrelenmiş metnin şifresi nedir?</param>
+        /// <param name="cipherMode">Şifreleme için kullanılacak blok şifreleme modunu belirtir.</param>
+        /// <param name="paddingMode">Mesaj veri bloğu daha kısa olduğunda uygulanacak dolgu türünü belirtir</param>
         /// <returns></returns>
         public static string Decrypt(string cipherText, string passPhrase, CipherMode cipherMode, PaddingMode paddingMode)
         {

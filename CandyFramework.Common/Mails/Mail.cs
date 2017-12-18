@@ -14,6 +14,7 @@ namespace CandyFramework.Common.Mails
         {
 
         }
+
         public Mail(List<string> to, string from)
         {
             BaseMail = new MailMessage { From = new MailAddress(from) };
@@ -21,6 +22,23 @@ namespace CandyFramework.Common.Mails
             {
                 BaseMail.To.Add(item);
             }
+        }
+        /// <summary>
+        /// Dikkat eğer daha önceden Body  bölümüne ekleme yapıldı ise silinir !
+        /// </summary>
+        /// <param name="htmlString"></param>
+        public void LoadBodyTamplete(string htmlString)
+        {
+            this.BaseMail.Body = htmlString;
+            this.BaseMail.IsBodyHtml = true;
+            this.BaseMail.BodyEncoding = Encoding.UTF8;
+            this.BaseMail.SubjectEncoding = Encoding.UTF8;
+        }
+        public void ReplaceMail(string oldString, string newString)
+        {
+            this.BaseMail.Body.Replace(oldString, newString);
+            this.BaseMail.Subject.Replace(oldString, newString);
+            this.BaseMail.From.DisplayName.Replace(oldString, newString);
         }
         public void LoadSMTP(string email, string password, string host, string port, bool ssl = false)
         {

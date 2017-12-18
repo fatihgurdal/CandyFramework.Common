@@ -4,18 +4,21 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CandyFramework.Common.Extentions
 {
     public static class ToConvert
     {
+        /// <summary>
+        /// Herhangi bir değişkeni int'a çevirir.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public static int ToInt(this object data)
         {
             if (data == null)
             {
-                return 0;
+                return default(int);
             }
             else
             {
