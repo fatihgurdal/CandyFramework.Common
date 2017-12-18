@@ -43,7 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converter\Serialize.cs" />
+    <Compile Include="Converter\JsonSerializer.cs" />
+    <Compile Include="Converter\XMLSerializer.cs" />
     <Compile Include="Encryption\Encrypter.cs" />
     <Compile Include="Extentions\ToConvert.cs" />
     <Compile Include="Mails\Mail.cs" />
