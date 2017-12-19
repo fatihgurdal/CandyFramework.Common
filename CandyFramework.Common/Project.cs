@@ -21,9 +21,7 @@ namespace CandyFramework.Common
         /// Veri tabanı bağlantı bilgisini hangi sağlayıcıdan okunsun?
         /// </summary>
         public static DataConnectionEnum Provider { get; private set; } = DataConnectionEnum.None;
-
         private static bool _setProduct = false;
-
         public static void SetProduct(string projectName, string instanceName, DataConnectionEnum _provider)
         {
             if (string.IsNullOrEmpty(projectName) || string.IsNullOrEmpty(instanceName) || _provider == DataConnectionEnum.None)
@@ -34,7 +32,6 @@ namespace CandyFramework.Common
             {
                 throw new ArgumentNullException("The product is already assigned !");
             }
-
             ProjectName = projectName;
             InstanceName = instanceName;
             Provider = _provider;

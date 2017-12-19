@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
@@ -34,6 +32,11 @@ namespace CandyFramework.Common.Mails
             this.BaseMail.BodyEncoding = Encoding.UTF8;
             this.BaseMail.SubjectEncoding = Encoding.UTF8;
         }
+        /// <summary>
+        /// Replace tagları {{OrnekTag}} şeklinde olmalıdır. Kullanılmayan taglar boş metin ile değiştirilir.
+        /// </summary>
+        /// <param name="oldString"></param>
+        /// <param name="newString"></param>
         public void ReplaceMail(string oldString, string newString)
         {
             this.BaseMail.Body.Replace(oldString, newString);

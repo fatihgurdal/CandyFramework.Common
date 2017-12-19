@@ -19,6 +19,7 @@ namespace CandyFramework.Common.Providers
         {
             if (Project.Provider == DataConnectionEnum.Regedit)
             {
+                #region - Regedit -
                 var regeditPath = $"SOFTWARE\\CandyFramework\\{Project.ProjectName}\\{Project.InstanceName}";
 
                 using (RegistryKey key = Registry.LocalMachine.OpenSubKey(regeditPath))
@@ -40,18 +41,21 @@ namespace CandyFramework.Common.Providers
                     {
                         throw new KeyNotFoundException("CF Error: Not found Connection String");
                     }
-                }
+                } 
+                #endregion
 
             }
             else if (Project.Provider == DataConnectionEnum.ReadFile)
             {
+                #region - File System -
                 var fileName = $"{Project.ProjectName}_{Project.InstanceName}.txt";
 
                 var fileText = File.ReadAllText(Path.Combine(Environment.CurrentDirectory, fileName));
 
                 var connectionObject = JsonSerializer.JSONDeserialize<dynamic>(fileText);
 
-                return connectionObject.ConnectionString;
+                return connectionObject.ConnectionString; 
+                #endregion
             }
             else
             {
